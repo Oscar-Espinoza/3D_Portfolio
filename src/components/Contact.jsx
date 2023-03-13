@@ -6,6 +6,8 @@ import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc/SectionWrapper';
 import { slideIn } from '../utils';
 
+// template ID: template_gzfc2bc
+
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
