@@ -11,7 +11,7 @@ const Hero = () => {
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
 
-        <div className={`${styles.heroHeadText}`}>
+        <div className={`${styles.heroHeadText} z-10`}>
           <h1>Hi, I'm <span className="text-[#915eff]">Oscar</span></h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I develop 3D visuals, user <br className="sm:block hidden" /> interfaces and web applications
@@ -21,7 +21,7 @@ const Hero = () => {
 
       <ComputersCanvas />
 
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+      <div className="absolute bottom-1 w-full flex justify-center items-center">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-full border-2 border-secondary flex justify-center items-start p-2">
             <motion.div
