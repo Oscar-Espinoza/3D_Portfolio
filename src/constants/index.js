@@ -15,14 +15,18 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
+  ba,
+  rm,
+  tsg,
   carrent,
   jobit,
-  tripguide,
   threejs,
+  letMeRent,
+  arturo,
+  myLogo,
+  letMeRent_img,
+  portfolio_img,
+  arturo_img,
 } from "../assets";
 
 export const navLinks = [
@@ -42,7 +46,11 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Back-end Developer",
+    icon: backend,
+  },
+  {
+    title: "Front-end Developer",
     icon: web,
   },
   {
@@ -50,11 +58,7 @@ const services = [
     icon: mobile,
   },
   {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
+    title: "Self-taught",
     icon: creator,
   },
 ];
@@ -116,55 +120,68 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: "IT Technician",
+    company_name: "Tecnialiado",
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Feb 2015 - April 2018",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Successfully provided onsite technical support to key clients in hospitals and businesses, resulting in improved client satisfaction and retention rates.",
+      "Demonstrated proficiency in repairing desktop PCs and notebooks, including hardware and software troubleshooting, and implementing solutions to prevent recurring issues.",
+      "Managed and resolved technical issues for a diverse range of clients, including Windows and Mac users, with a focus on minimizing downtime and ensuring optimal system performance.",
+      "Trained and mentored junior technicians, improving their technical skills and contributing to the overall success of the team.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "Technical support specialist",
+    company_name: "Buenos Aires City Government",
+    icon: ba,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jan 2019 - jul 2019",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Provided technical support and expertise to various departments of the undersecretary, ensuring seamless operations and minimizing downtime.",
+      "Developed and maintained strong relationships with internal clients, providing excellent customer service and communication throughout the support process.",
+      "Conducted regular system updates and maintenance to ensure optimal performance and reliability of equipment, reducing system failures and downtime.",
+      "Researched and recommended new technologies and solutions to improve system performance and efficiency, and reduce maintenance costs.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
+    title: "Functional System Analyst",
+    company_name: "Buenos Aires City Government",
+    icon: ba,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "Jul 2019 - Dec 2020",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Conducted comprehensive analysis of business processes to identify opportunities for improvement, leveraging IT solutions to optimize and streamline those processes.",
+      "Collaborated with cross-functional teams to gather and document business requirements, translating them into technical specifications for system enhancements.",
+      "Provided training and support to end-users, ensuring successful adoption and use of new technologies and systems.",
+      "Demonstrated excellent communication skills, clearly explaining technical issues to non-technical users, and building strong relationships with team members and clients.",
+    ],
+  },
+  {
+    title: "Remote - Order fulfillment specialist",
+    company_name: "Rehabmart.com",
+    icon: rm,
+    iconBg: "#E6DEDD",
+    date: "Jan 2021 - May 2022",
+    points: [
+      "Maintained a high level of accuracy and efficiency in processing 300+ POs per day, contributing to the company's overall success and achieving its goals and objectives.",
+      "Conducted regular data analysis and reporting to monitor and improve order fulfillment processes, identifying areas for improvement and implementing effective solutions.",
+      "Collaborated with cross-functional teams, including customer service, inventory management, and shipping, to ensure smooth and efficient order fulfillment processes.",
+      "Demonstrated proficiency in using a variety of order management software and tools, including their own management software.",
+    ],
+  },
+  {
+    title: "Remote Technical Support Specialist",
+    company_name: "TSG Proadvisor",
+    icon: tsg,
+    iconBg: "#E6DEDD",
+    date: "May 2022 - Present",
+    points: [
+      "Provided expert technical support to clients of TSG Proadvisor, a leading provider of tax preparation software.",
+      "Collaborated with cross-functional teams to gather and document technical requirements for software enhancements and upgrades.",
+      "Demonstrated excellent communication skills, clearly explaining technical issues to non-technical users, and building strong relationships with team members and clients.",
+      "Conducted remote troubleshooting and problem resolution for clients, using a variety of remote access tools and technologies to ensure quick and efficient resolution of technical issues.",
+      "Maintained accurate and detailed technical support records, providing valuable insights and recommendations for improving technical support processes and customer satisfaction.",
     ],
   },
 ];
@@ -172,7 +189,7 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+      "I thought it was impossible to make a website as beautiful as our product, but Oscar proved me wrong.",
     name: "Sara Lee",
     designation: "CFO",
     company: "Acme Co",
@@ -180,7 +197,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+      "I've never met a web developer who truly cares about their clients' success like Oscar does.",
     name: "Chris Brown",
     designation: "COO",
     company: "DEF Corp",
@@ -188,7 +205,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+      "After Oscar optimized our website, our traffic increased by 50%. We can't thank them enough!",
     name: "Lisa Wang",
     designation: "CTO",
     company: "456 Enterprises",
@@ -198,51 +215,63 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "LetMeRent",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Web-based platform that simplifies the rental process for users seeking properties by allowing them to easily search, book, and manage rentals from various providers. With our app, users can find the perfect property to suit their needs and manage all aspects of the rental process in one convenient location. Whether you're a renter or a property owner, our app provides an efficient and seamless solution for all your rental needs.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "nodejs",
         color: "green-text-gradient",
       },
       {
         name: "tailwind",
         color: "pink-text-gradient",
       },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
     ],
-    image: carrent,
+    image: letMeRent_img,
     source_code_link: "https://github.com/",
+    website_link: "https://rent-dashboard.netlify.app/",
+    logo: letMeRent,
   },
   {
-    name: "Job IT",
+    name: "Arturo MichAIlena",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "AI art web app, inspired by DALL·E, leverages the power of artificial intelligence to transform written prompts into stunning, high-quality images. With the ability to also modify uploaded images, our app empowers users to bring their ideas to life in entirely new ways. Experience the cutting-edge technology of AI art with our app.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "OpenAI api",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "mongodb",
         color: "pink-text-gradient",
       },
+      {
+        name: "nodejs",
+        color: "blue-text-gradient",
+      },
     ],
-    image: jobit,
+    image: arturo_img,
     source_code_link: "https://github.com/",
+    website_link: "https://arturo-michailena.netlify.app/",
+    logo: arturo,
   },
   {
-    name: "Trip Guide",
+    name: "3D Porfolio website",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Welcome to my portfolio website! This platform showcases my skills, experience, and accomplishments, offering potential clients and employers a comprehensive view of my work. With a clean and modern design, my website highlights my expertise in [insert your field or specialty] and features examples of my best work. Whether you're a recruiter, a potential client, or just browsing, my website is the perfect place to get to know me and my professional abilities.",
     tags: [
       {
         name: "nextjs",
@@ -257,8 +286,10 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: portfolio_img,
     source_code_link: "https://github.com/",
+    website_link: "https://rent-dashboard.netlify.app/",
+    logo: myLogo,
   },
 ];
 

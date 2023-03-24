@@ -26,10 +26,18 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import ba from "./company/baciudad.png"
+import rm from "./company/rm.png"
+import tsg from "./company/tsg.png"
 
+import letMeRent_img from  "./letMeRent.jpeg"
+import arturo_img from "./arturo_img.jpeg"
+import portfolio_img from "./portfolio_img.jpeg"
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+
+import letMeRent from "./websites/letMeRent.svg"
+import arturo from "./websites/arturo.png"
 
 export {
   logo,
@@ -58,7 +66,14 @@ export {
   shopify,
   starbucks,
   tesla,
+  ba,
+  rm,
+  tsg,
   carrent,
   jobit,
-  tripguide,
+  letMeRent,
+  arturo,
+  letMeRent_img,
+  portfolio_img,
+  arturo_img,
 };
