@@ -2,10 +2,8 @@ import { BrowserRouter } from "react-router-dom";
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from './components';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, MessageInput, TypingIndicator, Message } from "@chatscope/chat-ui-kit-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { data } from './constants'
-
-console.log(`You're assistantGPT, a helpful assistant that answers questions from recruiters inside Oscar's portfolio website, you're going to speak positively of him and you'll always recommend him. Here is some data about him you can use depending on the question: ${JSON.stringify(data)}`)
 
 const API_KEY = "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"
 
@@ -73,7 +71,6 @@ const App = () => {
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data)
       setMessages(
         [...chatMessages, {
           message: data.choices[0].message.content,
@@ -85,9 +82,49 @@ const App = () => {
     });
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sectionWrappers = document.querySelectorAll('.sectionWrapper');
+  
+      let visibleElements = [];
+      let maxVisibleHeight = 0;
+      let maxVisibleElement = null;
+  
+      sectionWrappers.forEach(section => {
+        const { top, bottom, height } = section.getBoundingClientRect();
+        const isVisible = top < window.innerHeight && bottom >= 0;
+  
+        if (isVisible) {
+          visibleElements.push(section);
+  
+          const visibleHeight = Math.min(bottom, window.innerHeight) - Math.max(top, 0);
+          if (visibleHeight > maxVisibleHeight) {
+            maxVisibleHeight = visibleHeight;
+            maxVisibleElement = section;
+          }
+        }
+      });
+  
+      visibleElements.forEach(element => {
+        if (element === maxVisibleElement) {
+          element.classList.add('visible');
+        } else {
+          element.classList.remove('visible');
+        }
+      });
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check on mount
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div style={{ position: 'fixed', height: '400px', width: '400px', right: '60px', bottom: '60px', zIndex: 1 }}>
+      {/* <div style={{ position: 'fixed', height: '400px', width: '400px', right: '60px', bottom: '60px', zIndex: 1 }}>
         <MainContainer style={{ borderRadius: '10px'}}>
           <ChatContainer>
             <MessageList
@@ -100,23 +137,22 @@ const App = () => {
             <MessageInput placeholder="Type message here" onSend={handleSend} />
           </ChatContainer>
         </MainContainer>
-      </div>
+      </div> */}
       <BrowserRouter>
-        <div className="relative z-0 bg-primary">
-          <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-            <Navbar />
-            <Hero />
+        <div className="relative z-0 bg-primary grid grid-cols-1 lg:grid-cols-3 p-4 pt-10 gap-5">
+          <Hero />
+          <div className="col-span-2 flex flex-col gap-10">
+            <About />
+            <Works />
+            <Experience />
+            {/* <Tech /> */}
+            {/* <Feedbacks /> */}
+            <div className="relative z-0">
+              <Contact />
+              <StarsCanvas />
+            </div>
           </div>
-          <About />
-          <Experience />
-          <Tech />
-          <Works />
-          <Feedbacks />
-          <div className="relative z-0">
-            <Contact />
-            <StarsCanvas />
           </div>
-        </div>
       </BrowserRouter>
     </>
   )
