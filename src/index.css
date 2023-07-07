@@ -13,6 +13,20 @@
   color-scheme: dark;
 }
 
+body {
+  position: relative;
+}
+
+.sectionWrapper {
+  opacity: 0;
+  transition: opacity 0.7s;
+  min-height: 100vh;
+}
+
+.sectionWrapper.visible {
+  opacity: 1;
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;

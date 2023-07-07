@@ -1,10 +1,10 @@
 import React from 'react';
 import Tilt from 'react-tilt';
 import { motion } from 'framer-motion';
-import { styles } from '../styles';
-import { services } from '../constants';
-import { fadeIn, textVariant } from './../utils';
-import { SectionWrapper } from '../hoc/SectionWrapper';
+import { styles } from '../../styles';
+import { services } from '../../constants';
+import { fadeIn, textVariant } from '../../utils';
+import { SectionWrapper } from '../../hoc/SectionWrapper';
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -33,8 +33,8 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview</h2>
+        <p className={styles.sectionHeadText}>Introduction</p>
+        <h2 className={styles.sectionSubText}>Overview</h2>
       </motion.div>
 
       <motion.p

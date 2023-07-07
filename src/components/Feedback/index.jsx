@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { SectionWrapper } from "../hoc/SectionWrapper";
-import { fadeIn, textVariant } from "../utils";
-import { testimonials } from "../constants";
+import { styles } from "../../styles";
+import { SectionWrapper } from "../../hoc/SectionWrapper";
+import { fadeIn, textVariant } from "../../utils";
+import { testimonials } from "../../constants";
 
 const FeedbackCard = ({ index, testimonial, name, designation, company, image }) => (
   <motion.div
