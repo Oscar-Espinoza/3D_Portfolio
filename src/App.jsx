@@ -139,9 +139,9 @@ const App = () => {
         </MainContainer>
       </div> */}
       <BrowserRouter>
-        <div className="relative z-0 bg-primary grid grid-cols-1 lg:grid-cols-3 p-4 pt-10 gap-5">
+        <div className="relative z-0 bg-primary grid grid-cols-1 lg:grid-cols-3 p-4 lg:pt-20 gap-5" id='content-container'>
           <Hero />
-          <div className="col-span-2 flex flex-col gap-10">
+          <div className="col-span-2 flex flex-col gap-32">
             <About />
             <Works />
             <Experience />
