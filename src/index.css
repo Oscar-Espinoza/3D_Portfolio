@@ -20,7 +20,6 @@ body {
 .sectionWrapper {
   opacity: 0.03;
   transition: opacity 1s;
-  max-width: 80%;
 }
 
 .sectionWrapper.visible {
