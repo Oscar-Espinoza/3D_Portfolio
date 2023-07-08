@@ -48,75 +48,129 @@ const services = [
   {
     title: "Back-end",
     icon: backend,
+    technologies: [
+      {
+        name: "Node JS",
+        icon: "nodejs",
+      },
+      {
+        name: "MongoDB",
+        icon: "mongodb",
+      },
+      {
+        name: "git",
+        icon: "git",
+      },
+      {
+        name: "docker",
+        icon: "docker",
+      },
+    ]
   },
   {
     title: "Front-end",
     icon: web,
+    technologies: [
+      {
+        name: "HTML 5",
+        icon: "html",
+      },
+      {
+        name: "CSS 3",
+        icon: "css",
+      },
+      {
+        name: "JavaScript",
+        icon: "javascript",
+      },
+      {
+        name: "TypeScript",
+        icon: "typescript",
+      },
+      {
+        name: "React JS",
+        icon: "reactjs",
+      },
+      {
+        name: "Redux Toolkit",
+        icon: "redux",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "tailwind",
+      },
+      {
+        name: "Three JS",
+        icon: "threejs",
+      },
+      {
+        name: "figma",
+        icon: "figma",
+      },
+    ],
   },
   {
     title: "React Native",
     icon: mobile,
+    technologies: [
+      {
+        name: "React Native",
+        icon: "reactnative",
+      },
+      {
+        name: "Expo",
+        icon: "expo",
+      },
+      {
+        name: "React Navigation",
+        icon: "reactnavigation",
+      },
+      {
+        name: "Redux",
+        icon: "redux",
+      },
+      {
+        name: "Axios",
+        icon: "axios",
+      },
+    ]
   },
   {
     title: "Self-taught",
     icon: creator,
-  },
+    technologies: [
+      {
+        name: "Git",
+        icon: "git",
+      },
+      {
+        name: "Stack Overflow",
+        icon: "stackoverflow",
+      },
+      {
+        name: "Online documentation",
+        icon: "documentation",
+      },
+      {
+        name: "Online coding platforms",
+        icon: "onlineplatform",
+      },
+      {
+        name: "Online courses and video tutorials (e.g., Udemy, Pluralsight)",
+        icon: "onlinecourse",
+      },
+      {
+        name: "Pair programming with other developers",
+        icon: "pairprogramming",
+      },
+      {
+        name: "Personal projects and experimentation",
+        icon: "personalprojects",
+      },
+    ]
+  }
 ];
 
-const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
-];
 
 const experiences = [
   {
@@ -494,5 +548,5 @@ const data = {
   ]
 };
 
-export { services, technologies, experiences, testimonials, projects, data };
+export { services, experiences, testimonials, projects, data };
 
