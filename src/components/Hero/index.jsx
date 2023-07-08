@@ -59,13 +59,13 @@ const Hero = () => {
   }, [hue]);
 
   return (
-    <div className="relative hero-container" id='hero'>
-      <div className="container flex flex-col items-start gap-5 sticky top-20">
+    <div className="relative hero-container md:col-span-4 lg:col-span-3 col-span-12" id='hero'>
+      <div className="container flex flex-col items-start gap-5 sticky md:top-20">
         <div className='z-10'>
-          <h1 className="font-black lg:text-[50px] text-[40px]" style={{ color: `hsl(${hue}, 100%, 68%)` }}>
+          <h1 className="font-black md:text-[30px] lg:text-[50px]" style={{ color: `hsl(${hue}, 100%, 68%)` }}>
             {capitalizeFirstLetter(text)}
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100 w-11/12`}>
+          <p className={`text-[#dfd9ff] hidden lg:block font-medium lg:text-[20px] mt-2 w-11/12`}>
             Full-stack web and mobile software developer
           </p>
         </div>

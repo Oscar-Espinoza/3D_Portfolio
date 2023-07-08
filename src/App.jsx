@@ -140,9 +140,9 @@ const App = () => {
       </div> */}
       <BrowserRouter>
           {/* <Navbar /> */}
-        <div className="relative z-0 bg-primary grid grid-cols-1 lg:grid-cols-3 p-4 lg:pt-20 gap-12" id='content-container'>
+        <div className="relative z-0 bg-primary grid grid-cols-12 p-4 lg:pt-20 gap-12" id='content-container'>
           <Hero />
-          <div className="col-span-2 flex flex-col gap-32">
+          <div className="col-span-12 md:col-span-8 lg:col-span-9 flex flex-col gap-20">
             <About />
             <Projects />
             <Experience />
