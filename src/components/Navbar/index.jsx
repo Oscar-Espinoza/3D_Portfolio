@@ -22,7 +22,7 @@ const Navbar = () => {
           }}
         >
           <img src={myLogo} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold curson-pointer flex">
+          <p className="text-white text-[26px] font-bold curson-pointer flex">
             Oscar &nbsp;<span className="sm:block hidden
           ">| Espinoza</span>
           </p>
@@ -38,7 +38,7 @@ const Navbar = () => {
               }`}
               onClick={() => setActive(Link.title)}
             >
-              <a href={`#${Link.id}`}>{Link.title}</a>
+              <a href={`#${Link.id}`} className='font-poppins font-medium cursor-pointer text-[20px]'>{Link.title}</a>
             </li>
           ))}
         </ul>

@@ -1,4 +1,3 @@
-import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../../styles";
 import { git, github } from "../../assets";
@@ -8,13 +7,8 @@ import { fadeIn, textVariant } from "../../utils";
 
 const ProjectCard = ({ index, name, description, tags, image, source_code_link, website_link, logo }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        options={{
-          max:45,
-          scale: 1,
-          speed: 450,
-        }}
+    <div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+      <div
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
       >
         <div className="relative w-full h-[230px]">
@@ -56,26 +50,23 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
             </p>
           ))}
         </div>
-      </Tilt>
-    </motion.div>
+      </div>
+    </div>
   )
 }
 
-const Works = () => {
+const Projects = () => {
   return (
-    <>
-      <motion.div variants={textVariant}>
+    <section className="relative z-0 sectionWrapper" id='projects'>
+      <div>
       <p className={styles.sectionSubText}>My work</p>
         <h2 className={styles.sectionHeadText}>Projects</h2>
-      </motion.div>
+      </div>
 
       <div className="w-full felx">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3x1 leading-[30px]"
-        >
+        <p variants={fadeIn("", "", 0.1, 1)} className="mt-3 text-secondary text-[17px] max-w-3x1 leading-[30px]">
           Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively.
-        </motion.p>
+        </p>
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7">
@@ -83,8 +74,8 @@ const Works = () => {
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
-    </>
+    </section>
   )
 }
 
-export default SectionWrapper(Works, "")
+export default Projects

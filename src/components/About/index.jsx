@@ -1,9 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { styles } from '../../styles';
 import { services } from '../../constants';
-import { fadeIn, textVariant } from '../../utils';
-import { SectionWrapper } from '../../hoc/SectionWrapper';
 
 const ServiceCard = ({ title, icon }) => {
   return (
@@ -18,26 +15,22 @@ const ServiceCard = ({ title, icon }) => {
 
 const About = () => {
   return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionHeadText}>Introduction</p>
+    <section className='relative z-0 sectionWrapper' id='about'>
+      <div>
         <h2 className={styles.sectionSubText}>Overview</h2>
-      </motion.div>
+      </div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leadding-[30px]"
-      >
+      <p className="mt-4 text-secondary text-[17px] max-w-3xl leadding-[30px]">
         Oscar Espinoza here, a Full Stack Developer with a focus on delivering reliable technology solutions. My skill set covers a range of front-end and back-end technologies. Combining technical proficiency with solid problem-solving and communication skills, I am prepared to tackle complex projects with efficiency and professionalism.
-      </motion.p>
+      </p>
 
-      <div className="mt-10 grid grid-cols-2 gap-4">
+      <div className="mt-10 grid grid-cols-2 gap-4 ">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-    </>
+    </section>
   )
 }
 
-export default SectionWrapper(About, "about");
+export default About;
