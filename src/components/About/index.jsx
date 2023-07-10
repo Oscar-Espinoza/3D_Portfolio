@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { styles } from '../../styles';
 import { services } from '../../constants';
+import { TbBoxMultiple2 } from 'react-icons/tb'
 
 const ServiceCard = ({ title, icon, index, setCurrentService }) => {
   return (
-      <div className="green-pink-gradient p-[2px] rounded-[20px] shadow-card cursor-pointer hover:scale-125 hover:text-[20px] transition-transform duration-200" onClick={() => setCurrentService(index)}>
+      <div className="green-pink-gradient p-[1px] rounded-[20px] shadow-card cursor-pointer hover:scale-125 hover:text-[20px] transition-transform duration-200" onClick={() => setCurrentService(index)}>
         <div className="bg-tertiary rounded-[20px] flex flex-col lg:flex-row justify-center items-center p-2 gap-2">
-          <img src={icon} alt={title} className="w-6 object-contain" />
-          <h3 className="text-white text-xs lg:text-[15px] font-bold">{title}</h3>
+          {icon && <img src={icon} alt={title} className="w-6 object-contain" />}
+          <h3 className={`text-white text-xs lg:text-[15px] font-bold ${title === 'All' && 'py-1 px-4'}`}>{title}</h3>
         </div>
       </div>
   )
@@ -37,8 +38,14 @@ const About = () => {
         ))}
       </div>
 
-      <div className='h-52 w-full border border-solid border-gray-700 rounded-lg py-2 px-4 flex justify-evenly'>
-          {services[currentService].technologies.map((tech) => (
+      <div className='w-full border border-solid border-gray-700 rounded-lg py-2 px-4 flex flex-wrap justify-evenly'>
+          {currentService === 2 
+            ? services.map((service) => (
+              service.technologies.map((tech) => (
+                <TechCard tech={tech} />
+              ))
+            ))
+            : services[currentService].technologies.map((tech) => (
             <TechCard tech={tech} />
           ))}
       </div>

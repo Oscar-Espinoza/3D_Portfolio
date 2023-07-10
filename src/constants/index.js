@@ -65,6 +65,7 @@ const services = [
         name: "docker",
         icon: "docker",
       },
+      
     ]
   },
   {
@@ -108,6 +109,11 @@ const services = [
         icon: "figma",
       },
     ],
+  },
+  {
+    title: 'All',
+    icon: null,
+    technologies: []
   },
   {
     title: "React Native",
