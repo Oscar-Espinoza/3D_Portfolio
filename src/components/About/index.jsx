@@ -14,15 +14,13 @@ const ServiceCard = ({ title, icon, index, setCurrentService }) => {
 }
 
 const TechCard = ({ tech }) => {
-  console.log(tech);
   return (
-    <></>
+    <p>{tech.name}</p>
   )
 }
 
 const About = () => {
   const [currentService, setCurrentService] = useState(0)
-  console.log(services[currentService].technologies);
   return (
     <section className='relative z-0 sectionWrapper w-10/12 flex flex-col gap-10' id='about'>
       <div>
@@ -39,8 +37,10 @@ const About = () => {
         ))}
       </div>
 
-      <div className=' h-96 w-full border border-solid border-gray-700 rounded-lg py-2 px-4'>
-          
+      <div className='h-52 w-full border border-solid border-gray-700 rounded-lg py-2 px-4 flex justify-evenly'>
+          {services[currentService].technologies.map((tech) => (
+            <TechCard tech={tech} />
+          ))}
       </div>
     </section>
   )
