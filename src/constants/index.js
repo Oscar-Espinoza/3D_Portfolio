@@ -162,16 +162,16 @@ const services = [
         icon: "onlineplatform",
       },
       {
-        name: "Online courses and video tutorials (e.g., Udemy, Pluralsight)",
-        icon: "onlinecourse",
+        name: "Online tutorials",
+        icon: "onlinetutorials",
       },
       {
-        name: "Pair programming with other developers",
+        name: "Pair programming",
         icon: "pairprogramming",
       },
       {
-        name: "Personal projects and experimentation",
-        icon: "personalprojects",
+        name: "Personal projects",
+        icon: "lab",
       },
     ]
   }

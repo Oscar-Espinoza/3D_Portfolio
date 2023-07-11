@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { styles } from '../../styles';
 import { services } from '../../constants';
 
-const svgs = ["threejs", "expo", "axios"];
+const svgs = ['threejs', 'expo', 'axios', 'stackoverflow', 'documentation', 'onlineplatform', 'onlinetutorials', 'pairprogramming', 'lab'];
 
 function isSvg(text) {
   return svgs.some(svg => text.includes(svg));
@@ -32,7 +32,7 @@ const TechCard = ({ tech }) => {
 const About = () => {
   const [currentService, setCurrentService] = useState(2)
   return (
-    <section className='relative z-0 sectionWrapper w-10/12 flex flex-col gap-10' id='about'>
+    <section className='relative z-0 sectionWrapper w-10/12 flex flex-col gap-10 min-h-screen' id='about'>
       <div>
         <h2 className={styles.sectionSubText}>Overview</h2>
       </div>

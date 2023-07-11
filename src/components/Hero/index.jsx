@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { styles } from "../../styles";
 import { capitalizeFirstLetter } from '../../utils';
+import { astronaut } from '../../assets';
+
+import './styles.css';
 
 const Hero = () => {
-  const [text, setText] = useState('Oscar');
+  const [text, setText] = useState('About');
   const [hue, setHue] = useState(259);
   const color = `hsl(${hue}, 100%, 68%)`;
   
@@ -69,7 +71,8 @@ const Hero = () => {
             Full-stack web and mobile software developer
           </p>
         </div>
-        <div className='flex flex-row w-full gap-10'>
+
+        <div className='flex flex-row w-full gap-10 h-52'>
           <div className="flex flex-col justify-center items-center" id='ball-container'>
           <div className="w-5 h-5 rounded-full" id='ball' style={{ backgroundColor: `hsl(${hue}, 100%, 68%)` }} />
             <div className="w-1 sm:h-80 h-40 violet-gradient" />
@@ -94,7 +97,11 @@ const Hero = () => {
             <li id='contact-option' className='text-gray-800'>- Contact</li>
           </ul>
         </div>
+        <div className="container">
+          <img src={astronaut} alt="astronaut" className="astronaut max-w-full" />
+        </div>
       </div>
+      
     </div>
   );
 };
