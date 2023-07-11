@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { styles } from '../../styles';
 import { services } from '../../constants';
-import { TbBoxMultiple2 } from 'react-icons/tb'
+
+const svgs = ["threejs", "expo", "axios"];
+
+function isSvg(text) {
+  return svgs.some(svg => text.includes(svg));
+}
 
 const ServiceCard = ({ title, icon, index, setCurrentService }) => {
   return (
@@ -15,13 +20,17 @@ const ServiceCard = ({ title, icon, index, setCurrentService }) => {
 }
 
 const TechCard = ({ tech }) => {
+  const imagePath = `../../../src/assets/tech/${tech.icon}.${isSvg(tech.icon) ? 'svg' : 'png'}`;
   return (
-    <p>{tech.name}</p>
+    <div className='border flex p-1 gap-1'>
+      <img src={imagePath} alt={`${tech.icon}`} style={{width: '20px', height: '20px'}} />
+      <p className=''>{tech.name}</p>
+    </div>
   )
 }
 
 const About = () => {
-  const [currentService, setCurrentService] = useState(0)
+  const [currentService, setCurrentService] = useState(2)
   return (
     <section className='relative z-0 sectionWrapper w-10/12 flex flex-col gap-10' id='about'>
       <div>
@@ -38,16 +47,16 @@ const About = () => {
         ))}
       </div>
 
-      <div className='w-full border border-solid border-gray-700 rounded-lg py-2 px-4 flex flex-wrap justify-evenly'>
-          {currentService === 2 
-            ? services.map((service) => (
-              service.technologies.map((tech) => (
-                <TechCard tech={tech} />
-              ))
+      <div className='w-full border border-solid border-gray-700 rounded-lg py-2 px-4 flex flex-wrap gap-2'>
+        {currentService === 2 
+          ? services.map((service) => (
+            service.technologies.map((tech) => (
+              <TechCard tech={tech} key={tech.name}/>
             ))
-            : services[currentService].technologies.map((tech) => (
-            <TechCard tech={tech} />
-          ))}
+          ))
+          : services[currentService].technologies.map((tech) => (
+          <TechCard tech={tech} key={tech.name}/>
+        ))}
       </div>
     </section>
   )

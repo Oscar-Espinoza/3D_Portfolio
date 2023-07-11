@@ -121,7 +121,7 @@ const services = [
     technologies: [
       {
         name: "React Native",
-        icon: "reactnative",
+        icon: "reactjs",
       },
       {
         name: "Expo",
