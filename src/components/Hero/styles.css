@@ -8,19 +8,10 @@
   }
 }
 
-.container {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-
 .astronaut {
   -webkit-animation: animate 2s infinite ease alternate;
   -moz-animation: animate 2s infinite ease alternate;
   -ms-animation: animate 2s infinite ease alternate;
   -o-animation: animate 2s infinite ease alternate;
   animation: animate 2s infinite ease alternate;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
 }

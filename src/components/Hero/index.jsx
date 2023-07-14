@@ -97,9 +97,7 @@ const Hero = () => {
             <li id='contact-option' className='text-gray-800'>- Contact</li>
           </ul>
         </div>
-        <div className="container">
-          <img src={astronaut} alt="astronaut" className="astronaut max-w-full" />
-        </div>
+        <img src={astronaut} alt="astronaut" className="astronaut xl:pr-20" />
       </div>
       
     </div>
