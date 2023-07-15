@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Projects, StarsCanvas } from './components';
+import { About, Contact, Experience, ScrollBar, Navbar, Projects, StarsCanvas, Hero } from './components';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, MessageInput, TypingIndicator, Message } from "@chatscope/chat-ui-kit-react";
 import { useEffect, useState } from "react";
@@ -140,19 +140,20 @@ const App = () => {
       </div> */}
       <BrowserRouter>
           {/* <Navbar /> */}
-        <div className="relative z-0 bg-primary grid grid-cols-1 md:grid-cols-12 px-4" id='content-container'>
-          <Hero />
-          <div className="col-span-12 md:col-span-8 lg:col-span-9 flex flex-col gap-20 md:pt-24 md:pl-6">
-            <About />
+        <div className="relative z-0 bg-primary grid grid-cols-1 md:grid-cols-12 px-4 gap-8 py-8" id='content-container'>
+          <div className="col-span-12 md:col-span-8 flex flex-col gap-20 px-3">
+            <Hero />
             <Projects />
             <Experience />
+            <About />
             {/* <Tech /> */}
             {/* <Feedbacks /> */}
             <div className="relative z-0">
               <Contact />
-              <StarsCanvas />
             </div>
           </div>
+          <ScrollBar />
+          <StarsCanvas />
         </div>
       </BrowserRouter>
     </>

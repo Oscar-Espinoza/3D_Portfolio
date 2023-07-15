@@ -1,0 +1,17 @@
+@keyframes animate {
+  to {
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+.astronaut {
+  -webkit-animation: animate 2s infinite ease alternate;
+  -moz-animation: animate 2s infinite ease alternate;
+  -ms-animation: animate 2s infinite ease alternate;
+  -o-animation: animate 2s infinite ease alternate;
+  animation: animate 2s infinite ease alternate;
+}

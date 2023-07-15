@@ -12,7 +12,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
       >
         <img src={image} alt={name} className="object-cover" />
       </div>
-      <div className="absolute top-2 right-2 z-20">
+      <div className="absolute top-2 right-2 z-20 flex gap-2">
         <div
           onClick={() => window.open(source_code_link, "blank")}
           className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
@@ -42,7 +42,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
           <p className="mt-2 text-white text-[14px]">{description}</p>
         </div>
 
-        <div className="flex w-full pb-2 px-3 rounded-lg gap-3">
+        <div className="flex flex-wrap w-full pb-2 px-3 rounded-lg gap-3">
           {tags.map((tag) => (
             <div className="bg-black bg-opacity-40 px-2 rounded-md">
               <p key={tag.name} className={`text-[18px] ${tag.color}`}>
