@@ -42,11 +42,12 @@ const Hero = () => {
 
   return (
     <section className="sectionWrapper hero-section flex flex-col justify-center items-center" id='hero'>
+      <div>
       <p className={`${styles.sectionSubText} w-fit`}>Hi! My name is Oscar Espinoza</p>
       <h1 className={`${styles.heroHeadText} w-fit flex gap-2`}>
         I'm 
         <div 
-          className='h-40' 
+          className='titles-container' 
           ref={titleContainerRef}
           style={{overscrollBehavior: 'contain'}}
         >
@@ -70,6 +71,7 @@ const Hero = () => {
           })}
         </div>
       </h1>
+      </div>
     </section>
   )
 };
