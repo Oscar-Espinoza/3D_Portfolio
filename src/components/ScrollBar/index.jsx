@@ -64,12 +64,9 @@ const ScrollBar = () => {
     <div className="hidden md:block relative hero-container md:col-span-4 lg:col-span-4 col-span-12 px-3 text-right" id='scrollBar'>
       <div className="container flex flex-col gap-5 sticky top-9">
       <div className="z-10 text-right flex flex-col gap-5">
-        <h1 className="font-black md:text-4xl lg:text-6xl" style={{ color: `hsl(${hue}, 100%, 68%)` }}>
+        <h1 className="font-black md:text-4xl lg:text-5xl xl:text-6xl" style={{ color: `hsl(${hue}, 100%, 68%)` }}>
           {capitalizeFirstLetter(text)}
         </h1>
-        <p className="text-[#dfd9ff] hidden lg:block font-medium lg:text-lg lg:max-w-[100%]">
-          Full-stack web and mobile software developer
-        </p>
       </div>
 
 

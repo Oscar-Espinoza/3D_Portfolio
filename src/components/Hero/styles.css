@@ -1,3 +1,37 @@
 .hero-section {
   min-height: calc(100vh - 2rem);
 }
+
+.titles-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 3em;  /* adjust this based on the size of your text */
+  overflow: hidden;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  opacity: 0.3;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform: translateY(-160%);
+}
+
+.title.current {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title.previous {
+  transform: translateY(-80%);
+}
+
+.title.next {
+  transform: translateY(80%);
+}
+
+.title.previous, .title.next {
+  opacity: 0.3;
+}
