@@ -13,22 +13,24 @@
 
 .title {
   position: absolute;
-  opacity: 0.3;
-  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transform: translateY(-160%);
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 
 .title.current {
-  opacity: 1;
   transform: translateY(0);
-}
-
-.title.previous {
-  transform: translateY(-80%);
+  opacity: 1;
 }
 
 .title.next {
-  transform: translateY(80%);
+  transform: translateY(70%);
+  opacity: 0.5;
+}
+
+.title.previous {
+  transform: translateY(-150%);
+  opacity: 0.5;
 }
 
 .title.previous, .title.next {

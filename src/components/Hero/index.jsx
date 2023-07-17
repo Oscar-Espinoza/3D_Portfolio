@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import { useDrag } from 'react-use-gesture'
+
 import { styles } from "../../styles";
 import './styles.css';
 
@@ -7,6 +9,7 @@ const titles = ['Front-end', 'Back-end', 'Mobile', 'Freelancer'];
 
 const Hero = () => {
   const [titleIndex, setTitleIndex] = useState(0);
+  const [dragged, setDragged] = useState(false);
   const titleRefs = useRef([]);
   const titleContainerRef = useRef();
 
@@ -40,6 +43,17 @@ const Hero = () => {
     });
   }, [titleIndex]);
 
+  const bind = useDrag(({ movement: [mx, my], direction: [dx, dy], down }) => {
+    const movingUp = dy < 0;
+    if (down && !dragged && Math.abs(my) > 30) { 
+      setTitleIndex((prev) => movingUp ? (prev + 1) % titles.length : (prev - 1 + titles.length) % titles.length);
+      setDragged(true);
+    }
+    if (!down) {
+      setDragged(false);
+    }
+  }, { axis: 'y', filterTaps: true });  
+
   return (
     <section className="sectionWrapper hero-section flex flex-col justify-center items-center" id='hero'>
       <div>
@@ -49,16 +63,18 @@ const Hero = () => {
         <div 
           className='titles-container' 
           ref={titleContainerRef}
-          style={{overscrollBehavior: 'contain'}}
+          style={{overscrollBehavior: 'contain', touchAction: 'none' }}
+          {...bind()}
+          onTouchMove={(e) => e.preventDefault()}
         >
           {titles.map((title, index) => {
             let className = 'title ';
             if (index === titleIndex) {
               className += 'current';
+            } else if (index === (titleIndex + 1) % titles.length) {
+              className += 'next';
             } else if (index === ((titleIndex - 1 + titles.length) % titles.length)) {
               className += 'previous';
-            } else if (index === ((titleIndex + 1) % titles.length)) {
-              className += 'next';
             }
             return (
               <span 
