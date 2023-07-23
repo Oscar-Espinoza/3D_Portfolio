@@ -61,15 +61,13 @@ const ScrollBar = () => {
   }, [hue]);
 
   return (
-    <div className="hidden md:block relative hero-container md:col-span-4 lg:col-span-4 col-span-12 px-3 text-right" id='scrollBar'>
-      <div className="container flex flex-col gap-5 sticky top-9">
-      <div className="z-10 text-right flex flex-col gap-5">
+    <div className="hidden md:block relative hero-container md:col-span-4 lg:col-span-3 col-span-12 px-3 text-right" id='scrollBar'>
+      <div className="container flex flex-col gap-14 sticky top-9">
+      <div className="z-10 text-right">
         <h1 className="font-black md:text-4xl lg:text-5xl xl:text-6xl" style={{ color: `hsl(${hue}, 100%, 68%)` }}>
           {capitalizeFirstLetter(text)}
         </h1>
       </div>
-
-
         <div className='flex flex-row gap-10 h-52 self-end'>
           <ul className='h-100 flex flex-col justify-between text-right' id='menu-index'>
             <style>
@@ -100,7 +98,9 @@ const ScrollBar = () => {
             <div className="w-1 sm:h-80 h-40 violet-gradient" />
           </div>
         </div>
-        <img src={astronaut} alt="astronaut" className="astronaut" />
+        <div className=''>
+          <img src={astronaut} alt="astronaut" className="astronaut float-right" />
+        </div>
       </div>
       
     </div>

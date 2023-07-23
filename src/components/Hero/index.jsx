@@ -5,9 +5,9 @@ import { styles } from "../../styles";
 import './styles.css';
 
 
-const titles = ['Front-end', 'Back-end', 'Mobile', 'Freelancer'];
 
 const Hero = () => {
+  const titles = ['Front-end', 'Back-end', 'Mobile', 'Freelancer'];
   const [titleIndex, setTitleIndex] = useState(0);
   const [dragged, setDragged] = useState(false);
   const titleRefs = useRef([]);
@@ -30,6 +30,17 @@ const Hero = () => {
     titleContainer.addEventListener('wheel', handleScroll, {passive: false});
     return () => titleContainer.removeEventListener('wheel', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log(titles.length)
+      setTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [titles.length]);
 
   useEffect(() => {
     titleRefs.current.forEach((ref, i) => {
@@ -61,7 +72,7 @@ const Hero = () => {
       <h1 className={`${styles.heroHeadText} w-fit flex gap-2`}>
         I'm 
         <div 
-          className='titles-container' 
+          className='titles-container cursor-grab' 
           ref={titleContainerRef}
           style={{overscrollBehavior: 'contain', touchAction: 'none' }}
           {...bind()}

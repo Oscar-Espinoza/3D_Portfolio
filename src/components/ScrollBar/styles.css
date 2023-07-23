@@ -14,4 +14,5 @@
   -ms-animation: animate 2s infinite ease alternate;
   -o-animation: animate 2s infinite ease alternate;
   animation: animate 2s infinite ease alternate;
+  max-width: 300px;
 }
