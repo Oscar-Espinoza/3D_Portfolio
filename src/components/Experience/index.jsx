@@ -12,16 +12,16 @@ const ExperienceCard = ({ experience }) => {
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
-        <div className="flex justify-center items-center w-full h-full">
+        <a href={experience.link} target="blank" className="flex justify-center items-center w-full h-full">
           {experience.icon
           ? <img
             src={experience.icon}
             alt={experience.company_name}
-            className="w-[100%] h-[60%] object-contain"
+            className="w-[95%] h-[95%] rounded-full"
             />
           : '' }
           
-        </div>
+        </a>
       }
     >
       <div>

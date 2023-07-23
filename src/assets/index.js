@@ -30,6 +30,7 @@ import tesla from "./company/tesla.png";
 import ba from "./company/baciudad.png"
 import rm from "./company/rm.png"
 import tsg from "./company/tsg.png"
+import devlabs from "./company/devlabs.jpg"
 
 import letMeRent_img from  "./letMeRent.jpeg"
 import arturo_img from "./arturo_img.jpeg"
@@ -71,6 +72,7 @@ export {
   ba,
   rm,
   tsg,
+  devlabs,
   carrent,
   jobit,
   letMeRent,

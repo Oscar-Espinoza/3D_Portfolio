@@ -5,15 +5,14 @@
 .titles-container {
   display: flex;
   flex-direction: column;
-  height: 2em;
+  height: 1.2em;
   overflow: hidden;
   position: relative;
-  min-width: 455px;
 }
 
 .title {
   position: absolute;
-  transform: translateY(-50%);
+  transform: translateY(100%);
   opacity: 0;
   transition: all 0.5s ease;
 }
@@ -21,18 +20,4 @@
 .title.current {
   transform: translateY(0);
   opacity: 1;
-}
-
-.title.next {
-  transform: translateY(70%);
-  opacity: 0.5;
-}
-
-.title.previous {
-  transform: translateY(-150%);
-  opacity: 0.5;
-}
-
-.title.previous, .title.next {
-  opacity: 0.3;
 }

@@ -1,20 +1,19 @@
 import { styles } from "../../styles";
-import { git, github } from "../../assets";
+import { github } from "../../assets";
 import { projects } from "../../constants";
-import { fadeIn, textVariant } from "../../utils";
+import { useEffect } from "react";
 
-const ProjectCard = ({ index, name, description, tags, image, source_code_link, website_link, logo }) => {
+const ProjectCard = ({ name, description, tags, image, source_code_link, website_link, logo }) => {
   return (
-    <div className="relative w-full">
+    <a href={website_link} target="blank" className="relative w-full h-96 cursor-pointer z-0">
       <div 
         style={{ backgroundImage: `url(${image})` }}
         className="relative w-full bg-cover bg-center blur-sm before:bg-black before:bg-opacity-30 project"
       >
-        <img src={image} alt={name} className="object-cover" />
+        <img src={image} alt={name} className="object-cover h-96" />
       </div>
-      <div className="absolute top-2 right-2 z-20 flex gap-2">
-        <div
-          onClick={() => window.open(source_code_link, "blank")}
+      <div className="absolute top-2 right-2 flex gap-2 z-20">
+        <a href={source_code_link} target="blank"
           className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
         >
           <img
@@ -22,10 +21,10 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
             alt="github"
             className="w-1/2 h-1/2"
           />
-        </div>
+        </a>
         <div
           onClick={() => window.open(website_link, "blank")}
-          className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+          className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer z-20"
         >
           <img
             src={logo} 
@@ -53,27 +52,23 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
         </div>
       </div>
 
-    </div>
+    </a>
   )
 }
 
 const Projects = () => {
+  useEffect(() => {
+    console.log(projects)
+  }, [])
+  
   return (
     <section className="relative z-0 sectionWrapper" id='projects'>
       <div>
-      <p className={styles.sectionSubText}>My work</p>
         <h2 className={styles.sectionHeadText}>Projects</h2>
       </div>
-
-      <div className="w-full felx">
-        <p className="mt-3 text-secondary text-[17px] max-w-3x1 leading-[30px]">
-          Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively.
-        </p>
-      </div>
-
-      <div className="mt-12 flex flex-col gap-3">
+      <div className="mt-12 grid grid-cols-2 gap-10">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard key={`project-${index}`} {...project} />
         ))}
       </div>
     </section>

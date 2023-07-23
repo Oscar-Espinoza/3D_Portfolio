@@ -18,6 +18,7 @@ import {
   ba,
   rm,
   tsg,
+  devlabs,
   carrent,
   jobit,
   threejs,
@@ -180,68 +181,59 @@ const services = [
 
 const experiences = [
   {
-    title: "IT Technician",
-    company_name: "Tecnialiado",
-    iconBg: "#383E56",
-    date: "Feb 2015 - April 2018",
-    points: [
-      "Successfully provided onsite technical support to key clients in hospitals and businesses, resulting in improved client satisfaction and retention rates.",
-      "Demonstrated proficiency in repairing desktop PCs and notebooks, including hardware and software troubleshooting, and implementing solutions to prevent recurring issues.",
-      "Managed and resolved technical issues for a diverse range of clients, including Windows and Mac users, with a focus on minimizing downtime and ensuring optimal system performance.",
-      "Trained and mentored junior technicians, improving their technical skills and contributing to the overall success of the team.",
-    ],
-  },
-  {
-    title: "Technical support specialist",
-    company_name: "Buenos Aires City Government",
-    icon: ba,
-    iconBg: "#E6DEDD",
-    date: "Jan 2019 - jul 2019",
-    points: [
-      "Provided technical support and expertise to various departments of the undersecretary, ensuring seamless operations and minimizing downtime.",
-      "Developed and maintained strong relationships with internal clients, providing excellent customer service and communication throughout the support process.",
-      "Conducted regular system updates and maintenance to ensure optimal performance and reliability of equipment, reducing system failures and downtime.",
-      "Researched and recommended new technologies and solutions to improve system performance and efficiency, and reduce maintenance costs.",
-    ],
-  },
-  {
     title: "Functional System Analyst",
     company_name: "Buenos Aires City Government",
     icon: ba,
+    link: "https://www.linkedin.com/company/gobierno-de-la-ciudad-de-buenos-aires/",
     iconBg: "#E6DEDD",
-    date: "Jul 2019 - Dec 2020",
+    date: "Jul 2018 - Jan 2020",
     points: [
-      "Conducted comprehensive analysis of business processes to identify opportunities for improvement, leveraging IT solutions to optimize and streamline those processes.",
-      "Collaborated with cross-functional teams to gather and document business requirements, translating them into technical specifications for system enhancements.",
-      "Provided training and support to end-users, ensuring successful adoption and use of new technologies and systems.",
-      "Demonstrated excellent communication skills, clearly explaining technical issues to non-technical users, and building strong relationships with team members and clients.",
+      "Carried out extensive business processes analysis, identifying areas for improvement and leveraging IT to optimize those procedures.",
+      "Partnered with diverse teams to capture and document business requirements, subsequently translating them into actionable technical specifications for system enhancements.",
+      "Facilitated training and support for end-users to ensure smooth adoption and application of new technologies and systems.",
+      "Showcased strong communication abilities, effectively explaining technical concepts to non-technical users, and fostering solid relationships with team members and clients.",
     ],
   },
   {
     title: "Remote - Order fulfillment specialist",
     company_name: "Rehabmart.com",
     icon: rm,
+    link: "https://www.linkedin.com/company/rehabmart-llc/",
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - May 2022",
+    date: "Jan 2020 - May 2021",
     points: [
-      "Maintained a high level of accuracy and efficiency in processing 300+ POs per day, contributing to the company's overall success and achieving its goals and objectives.",
-      "Conducted regular data analysis and reporting to monitor and improve order fulfillment processes, identifying areas for improvement and implementing effective solutions.",
-      "Collaborated with cross-functional teams, including customer service, inventory management, and shipping, to ensure smooth and efficient order fulfillment processes.",
-      "Demonstrated proficiency in using a variety of order management software and tools, including their own management software.",
+      "Improved operational efficiency by conducting data analysis and reporting to monitor and enhance order fulfillment processes.",
+      "Collaborated with cross-functional teams, demonstrating effective communication and teamwork skills.",
+      "Showcased strong problem-solving skills through the identification and implementation of effective solutions for process improvement.",
+      "Demonstrated proficiency in using order management software and tools, including their own management software.",
     ],
   },
   {
     title: "Remote Technical Support Specialist",
     company_name: "TSG Proadvisor",
     icon: tsg,
+    link: "https://tsgproadvisorlatino.talentlms.com/",
+    iconBg: "#E6DEDD",
+    date: "May 2021 - May 2022",
+    points: [
+      "Provided technical support, gaining extensive experience in problem-solving and client communication.",
+      "Collaborated with cross-functional teams to gather and document technical requirements, gaining experience in requirements gathering and analysis.",
+      "Conducted remote troubleshooting, demonstrating strong technical understanding and ability to work under pressure.",
+      "Maintained detailed technical support records, showing attention to detail and organizational skills.",
+    ],
+  },
+  {
+    title: "Full-stack Developer",
+    company_name: "DevLabs",
+    icon: devlabs,
+    link: "https://www.linkedin.com/company/devlabshq/",
     iconBg: "#E6DEDD",
     date: "May 2022 - Present",
     points: [
-      "Provided expert technical support to clients of TSG Proadvisor, a leading provider of tax preparation software.",
-      "Collaborated with cross-functional teams to gather and document technical requirements for software enhancements and upgrades.",
-      "Demonstrated excellent communication skills, clearly explaining technical issues to non-technical users, and building strong relationships with team members and clients.",
-      "Conducted remote troubleshooting and problem resolution for clients, using a variety of remote access tools and technologies to ensure quick and efficient resolution of technical issues.",
-      "Maintained accurate and detailed technical support records, providing valuable insights and recommendations for improving technical support processes and customer satisfaction.",
+      "Played a significant role in the creation of interactive, dynamic web applications employing cutting-edge JavaScript frameworks.",
+      "Orchestrated the development of scalable backend services with Express.js and Node.js, enhancing the robust functionality of our web applications.",
+      "Frequently crafted mobile interfaces and features using React-Native, ensuring a consistent user experience across various platforms.",
+      "Actively engaged in Agile Scrum practices, contributing to sprint planning, daily stand-ups, sprint reviews, and retrospectives, effectively managing project progress.",
     ],
   },
 ];
@@ -347,134 +339,15 @@ const projects = [
       },
     ],
     image: portfolio_img,
-    source_code_link: "https://github.com/",
-    website_link: "https://rent-dashboard.netlify.app/",
+    source_code_link: "https://github.com/Oscar-Espinoza/Portfolio-page",
+    website_link: "https://oscar-espinoza.netlify.app/",
     logo: myLogo,
   },
 ];
 
 const data = {
-  experiences: [
-    {
-      title: "Functional System Analyst",
-      company_name: "Buenos Aires City Government",
-      icon: ba,
-      iconBg: "#E6DEDD",
-      date: "Jul 2019 - Dec 2020",
-      points: [
-        "Conducted comprehensive analysis of business processes to identify opportunities for improvement, leveraging IT solutions to optimize and streamline those processes.",
-        "Collaborated with cross-functional teams to gather and document business requirements, translating them into technical specifications for system enhancements.",
-        "Provided training and support to end-users, ensuring successful adoption and use of new technologies and systems.",
-        "Demonstrated excellent communication skills, clearly explaining technical issues to non-technical users, and building strong relationships with team members and clients.",
-      ],
-    },
-    {
-      title: "Remote - Order fulfillment specialist",
-      company_name: "Rehabmart.com",
-      icon: rm,
-      iconBg: "#E6DEDD",
-      date: "Jan 2021 - May 2022",
-      points: [
-        "Maintained a high level of accuracy and efficiency in processing 300+ POs per day, contributing to the company's overall success and achieving its goals and objectives.",
-        "Conducted regular data analysis and reporting to monitor and improve order fulfillment processes, identifying areas for improvement and implementing effective solutions.",
-        "Collaborated with cross-functional teams, including customer service, inventory management, and shipping, to ensure smooth and efficient order fulfillment processes.",
-        "Demonstrated proficiency in using a variety of order management software and tools, including their own management software.",
-      ],
-    },
-    {
-      title: "Remote Technical Support Specialist",
-      company_name: "TSG Proadvisor",
-      icon: tsg,
-      iconBg: "#E6DEDD",
-      date: "May 2022 - Present",
-      points: [
-        "Provided expert technical support to clients of TSG Proadvisor, a leading provider of tax preparation software.",
-        "Collaborated with cross-functional teams to gather and document technical requirements for software enhancements and upgrades.",
-        "Demonstrated excellent communication skills, clearly explaining technical issues to non-technical users, and building strong relationships with team members and clients.",
-        "Conducted remote troubleshooting and problem resolution for clients, using a variety of remote access tools and technologies to ensure quick and efficient resolution of technical issues.",
-        "Maintained accurate and detailed technical support records, providing valuable insights and recommendations for improving technical support processes and customer satisfaction.",
-      ],
-    },
-  ],
-  projects: [
-    {
-      name: "LetMeRent",
-      description:
-        "Web-based platform that simplifies the rental process for users seeking properties by allowing them to easily search, book, and manage rentals from various providers. With our app, users can find the perfect property to suit their needs and manage all aspects of the rental process in one convenient location. Whether you're a renter or a property owner, our app provides an efficient and seamless solution for all your rental needs.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "nodejs",
-          color: "green-text-gradient",
-        },
-        {
-          name: "tailwind",
-          color: "pink-text-gradient",
-        },
-        {
-          name: "mongodb",
-          color: "green-text-gradient",
-        },
-      ],
-      image: letMeRent_img,
-      source_code_link: "https://github.com/",
-      website_link: "https://rent-dashboard.netlify.app/",
-      logo: letMeRent,
-    },
-    {
-      name: "Arturo MichAIlena",
-      description:
-        "AI art web app, inspired by DALL·E, leverages the power of artificial intelligence to transform written prompts into stunning, high-quality images. With the ability to also modify uploaded images, our app empowers users to bring their ideas to life in entirely new ways. Experience the cutting-edge technology of AI art with our app.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "OpenAI api",
-          color: "green-text-gradient",
-        },
-        {
-          name: "mongodb",
-          color: "pink-text-gradient",
-        },
-        {
-          name: "nodejs",
-          color: "blue-text-gradient",
-        },
-      ],
-      image: arturo_img,
-      source_code_link: "https://github.com/",
-      website_link: "https://arturo-michailena.netlify.app/",
-      logo: arturo,
-    },
-    {
-      name: "3D Porfolio website",
-      description:
-        "Welcome to my portfolio website! This platform showcases my skills, experience, and accomplishments, offering potential clients and employers a comprehensive view of my work. With a clean and modern design, my website highlights my expertise in [insert your field or specialty] and features examples of my best work. Whether you're a recruiter, a potential client, or just browsing, my website is the perfect place to get to know me and my professional abilities.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: portfolio_img,
-      source_code_link: "https://github.com/",
-      website_link: "https://rent-dashboard.netlify.app/",
-      logo: myLogo,
-    },
-  ],
+  experiences,
+  projects,
   technologies: [
     {
       name: "HTML 5",

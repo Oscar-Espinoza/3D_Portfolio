@@ -99,7 +99,7 @@ const ScrollBar = () => {
           </div>
         </div>
         <div className=''>
-          <img src={astronaut} alt="astronaut" className="astronaut float-right" />
+          <img src={astronaut} alt="astronaut" className="astronaut float-right xl:w-3/4" />
         </div>
       </div>
       
