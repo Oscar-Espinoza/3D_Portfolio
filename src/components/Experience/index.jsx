@@ -11,7 +11,7 @@ const ExperienceCard = ({ experience }) => {
       contentArrowStyle={{ boderRight: '7px solid #232631' }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
-      icon={
+      icon={ 
         <a href={experience.link} target="blank" className="flex justify-center items-center w-full h-full">
           {experience.icon
           ? <img
