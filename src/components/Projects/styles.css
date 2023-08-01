@@ -1,0 +1,35 @@
+.project-content {
+  opacity: 0;
+  transition: opacity 1.3s, opacity 0.5s;
+}
+
+.hover-project::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  --tw-bg-opacity: 0.5;
+  transition: background-color 0.5s;
+}
+
+.project-container .hover-project {
+  --tw-blur: blur(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  transition: filter 0.5s;
+}
+
+.project-container:hover .hover-project {
+  --tw-blur: blur(4px);
+}
+
+
+.project-container:hover .hover-project::before {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.project-container:hover .project-content {
+  opacity: 1;
+}

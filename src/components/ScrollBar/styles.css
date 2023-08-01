@@ -15,3 +15,7 @@
   -o-animation: animate 2s infinite ease alternate;
   animation: animate 2s infinite ease alternate;
 }
+
+.sidebar-container {
+  height: calc(100vh - 2rem);
+}

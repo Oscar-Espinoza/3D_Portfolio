@@ -22,22 +22,35 @@ import {
   carrent,
   jobit,
   threejs,
+  axios,
+  documentation,
+  expo,
+  lab,
+  onlineplatform,
+  onlinetutorials,
+  pairprogramming,
+  reactnavigation,
+  stackoverflow,
   letMeRent,
   arturo,
-  myLogo,
+  ApiDoc,
   letMeRent_img,
-  portfolio_img,
   arturo_img,
+  swagger_img,
 } from "../assets";
 
 export const navLinks = [
   {
-    id: "about",
-    title: "About",
+    id: "projects",
+    title: "Projects",
   },
   {
-    id: "work",
-    title: "Work",
+    id: "experience",
+    title: "Experience",
+  },
+  {
+    id: "Tech Stack",
+    title: "Tech Stack",
   },
   {
     id: "contact",
@@ -47,74 +60,69 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Back-end",
-    icon: backend,
-    technologies: [
-      {
-        name: "Node JS",
-        icon: "nodejs",
-      },
-      {
-        name: "MongoDB",
-        icon: "mongodb",
-      },
-      {
-        name: "git",
-        icon: "git",
-      },
-      {
-        name: "docker",
-        icon: "docker",
-      },
-      
-    ]
-  },
-  {
     title: "Front-end",
     icon: web,
     technologies: [
       {
         name: "HTML 5",
-        icon: "html",
+        icon: html,
       },
       {
         name: "CSS 3",
-        icon: "css",
+        icon: css,
       },
       {
         name: "JavaScript",
-        icon: "javascript",
+        icon: javascript,
       },
       {
         name: "TypeScript",
-        icon: "typescript",
+        icon: typescript,
       },
       {
         name: "React JS",
-        icon: "reactjs",
+        icon: reactjs,
       },
       {
         name: "Redux Toolkit",
-        icon: "redux",
+        icon: redux,
       },
       {
         name: "Tailwind CSS",
-        icon: "tailwind",
+        icon: tailwind,
       },
       {
         name: "Three JS",
-        icon: "threejs",
+        icon: threejs,
       },
       {
-        name: "figma",
-        icon: "figma",
+        name: "Figma",
+        icon: figma,
       },
     ],
   },
   {
-    title: 'All',
-    icon: null,
-    technologies: []
+    title: "Back-end",
+    icon: backend,
+    technologies: [
+      {
+        name: "Node JS",
+        icon: nodejs,
+      },
+      {
+        name: "MongoDB",
+        icon: mongodb,
+      },
+      {
+        name: "git",
+        icon: git,
+      },
+      {
+        name: "docker",
+        icon: docker,
+      },
+      
+    ]
   },
   {
     title: "React Native",
@@ -122,57 +130,57 @@ const services = [
     technologies: [
       {
         name: "React Native",
-        icon: "reactjs",
+        icon: reactjs,
       },
       {
         name: "Expo",
-        icon: "expo",
+        icon: expo,
       },
       {
         name: "React Navigation",
-        icon: "reactnavigation",
+        icon: reactnavigation,
       },
       {
         name: "Redux",
-        icon: "redux",
+        icon: redux,
       },
       {
         name: "Axios",
-        icon: "axios",
+        icon: axios,
       },
     ]
   },
   {
-    title: "Self-taught",
+    title: "Tools",
     icon: creator,
     technologies: [
       {
         name: "Git",
-        icon: "git",
+        icon: git,
       },
       {
         name: "Stack Overflow",
-        icon: "stackoverflow",
+        icon: stackoverflow,
       },
       {
         name: "Online documentation",
-        icon: "documentation",
+        icon: documentation,
       },
       {
         name: "Online coding platforms",
-        icon: "onlineplatform",
+        icon: onlineplatform,
       },
       {
         name: "Online tutorials",
-        icon: "onlinetutorials",
+        icon: onlinetutorials,
       },
       {
         name: "Pair programming",
-        icon: "pairprogramming",
+        icon: pairprogramming,
       },
       {
         name: "Personal projects",
-        icon: "lab",
+        icon: lab,
       },
     ]
   }
@@ -269,37 +277,37 @@ const projects = [
   {
     name: "LetMeRent",
     description:
-      "Web-based platform that simplifies the rental process for users seeking properties by allowing them to easily search, book, and manage rentals from various providers. With our app, users can find the perfect property to suit their needs and manage all aspects of the rental process in one convenient location. Whether you're a renter or a property owner, our app provides an efficient and seamless solution for all your rental needs.",
+      "Property rent app where you can publish your properties",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "nodejs",
+        name: "Nodejs",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Tailwindcss",
         color: "pink-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Mongodb",
         color: "green-text-gradient",
       },
     ],
     image: letMeRent_img,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/Oscar-Espinoza/Property-rent-management/tree/main/client",
     website_link: "https://rent-dashboard.netlify.app/",
     logo: letMeRent,
   },
   {
     name: "Arturo MichAIlena",
     description:
-      "AI art web app, inspired by DALL·E, leverages the power of artificial intelligence to transform written prompts into stunning, high-quality images. With the ability to also modify uploaded images, our app empowers users to bring their ideas to life in entirely new ways. Experience the cutting-edge technology of AI art with our app.",
+      "Generate images from prompts",
     tags: [
       {
-        name: "react",
+        name: "React.js",
         color: "blue-text-gradient",
       },
       {
@@ -307,101 +315,51 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Mongodb",
         color: "pink-text-gradient",
       },
       {
-        name: "nodejs",
+        name: "Node.js",
         color: "blue-text-gradient",
       },
     ],
     image: arturo_img,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/Oscar-Espinoza/AI-Image-Generation-App",
     website_link: "https://arturo-michailena.netlify.app/",
     logo: arturo,
   },
   {
-    name: "3D Porfolio website",
+    name: "API REST documentation for Yariga",
     description:
-      "Welcome to my portfolio website! This platform showcases my skills, experience, and accomplishments, offering potential clients and employers a comprehensive view of my work. With a clean and modern design, my website highlights my expertise in [insert your field or specialty] and features examples of my best work. Whether you're a recruiter, a potential client, or just browsing, my website is the perfect place to get to know me and my professional abilities.",
+      "Visual documentation from the Yariga API made with Swagger",
     tags: [
       {
-        name: "nextjs",
+        name: "Node.js",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Swagger",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "Mongodb",
         color: "pink-text-gradient",
       },
+      {
+        name: "Express.js",
+        color: "blue-text-gradient",
+      },
     ],
-    image: portfolio_img,
-    source_code_link: "https://github.com/Oscar-Espinoza/Portfolio-page",
-    website_link: "https://oscar-espinoza.netlify.app/",
-    logo: myLogo,
+    image: ApiDoc,
+    source_code_link: "https://github.com/Oscar-Espinoza/Property-rent-management/tree/main/server",
+    website_link: "https://nice-gold-ant-gear.cyclic.app/docs/",
+    logo: swagger_img,
   },
 ];
 
 const data = {
   experiences,
   projects,
-  technologies: [
-    {
-      name: "HTML 5",
-      icon: html,
-    },
-    {
-      name: "CSS 3",
-      icon: css,
-    },
-    {
-      name: "JavaScript",
-      icon: javascript,
-    },
-    {
-      name: "TypeScript",
-      icon: typescript,
-    },
-    {
-      name: "React JS",
-      icon: reactjs,
-    },
-    {
-      name: "Redux Toolkit",
-      icon: redux,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: tailwind,
-    },
-    {
-      name: "Node JS",
-      icon: nodejs,
-    },
-    {
-      name: "MongoDB",
-      icon: mongodb,
-    },
-    {
-      name: "Three JS",
-      icon: threejs,
-    },
-    {
-      name: "git",
-      icon: git,
-    },
-    {
-      name: "figma",
-      icon: figma,
-    },
-    {
-      name: "docker",
-      icon: docker,
-    },
-  ],
   aboutMe: {
     title: "Hi, I'm Oscar",
     subtitle: "Full-stack web and mobile software developer",
