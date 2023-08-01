@@ -31,7 +31,9 @@ const About = () => {
 
       <div className="grid grid-cols-3 sm:grid-cols-4 xl:grid-cols-5 gap-16 justify-items-stretch bg-tertiary bg-opacity-30 p-3 rounded-lg">
         {services.map((service) =>
-          service.technologies.map((tech) => <TechCard tech={tech} />)
+          service.technologies.map((tech) => (
+            <TechCard tech={tech} key={tech.name} />
+          ))
         )}
       </div>
     </section>

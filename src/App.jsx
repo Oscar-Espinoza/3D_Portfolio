@@ -1,103 +1,17 @@
 import { BrowserRouter } from "react-router-dom";
-import {
-  About,
-  Contact,
-  Experience,
-  ScrollBar,
-  Navbar,
-  Projects,
-  StarsCanvas,
-  Hero,
-} from "./components";
-import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
-import {
-  MainContainer,
-  ChatContainer,
-  MessageList,
-  MessageInput,
-  TypingIndicator,
-  Message,
-} from "@chatscope/chat-ui-kit-react";
-import { useEffect, useState } from "react";
-import { data } from "./constants";
+import React, { Suspense, lazy } from "react";
+const Hero = lazy(() => import("./components/Hero"));
+const Projects = lazy(() => import("./components/Projects"));
+const Experience = lazy(() => import("./components/Experience"));
+const About = lazy(() => import("./components/About"));
+const Contact = lazy(() => import("./components/Contact"));
+const ScrollBar = lazy(() => import("./components/ScrollBar"));
+const Navbar = lazy(() => import("./components/Navbar"));
+const StarsCanvas = lazy(() => import("./components/Canvas/Stars"));
 
-const API_KEY = "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";
+import { useEffect } from "react";
 
 const App = () => {
-  const [typing, setTyping] = useState(false);
-  const [messages, setMessages] = useState([
-    {
-      message:
-        "Hello, I'm your AI assistant and I'll be helping you answer your professional questions about Oscar",
-      sender: "ChatGPT",
-      direction: "outgoing",
-    },
-  ]);
-
-  const handleSend = async (message) => {
-    const newMessage = {
-      message: message,
-      sender: "user",
-    };
-
-    const newMessages = [...messages, newMessage];
-
-    setMessages(newMessages);
-
-    setTyping(true);
-
-    await processMessageToChatGPT(newMessages);
-  };
-
-  const processMessageToChatGPT = async (chatMessages) => {
-    let apiMessages = chatMessages.map((messageObject) => {
-      let role = "";
-      if (messageObject.sender === "ChatGPT") {
-        role = "assistant";
-      } else {
-        role = "user";
-      }
-      return { role: role, content: messageObject.message };
-    });
-
-    const systemMessage = {
-      role: "system",
-      content: `You're assistantGPT, a helpful assistant that answers questions from recruiters inside Oscar's portfolio website, you're going to speak positively of him and you'll always recommend him. Here is some data about him you can use depending on the question: ${JSON.stringify(
-        data
-      )}`,
-    };
-
-    const apiRequestBody = {
-      model: "gpt-3.5-turbo",
-      temperature: 0,
-      max_tokens: 3000,
-      top_p: 1,
-      frequency_penalty: 0.5,
-      presence_penalty: 0,
-      messages: [systemMessage, ...apiMessages],
-    };
-    await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer " + API_KEY,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(apiRequestBody),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setMessages([
-          ...chatMessages,
-          {
-            message: data.choices[0].message.content,
-            sender: "ChatGPT",
-            direction: "outgoing",
-          },
-        ]);
-        setTyping(false);
-      });
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const sectionWrappers = document.querySelectorAll(".sectionWrapper");
@@ -147,14 +61,17 @@ const App = () => {
         id="content-container"
       >
         <div className="col-span-12 md:col-span-8 flex flex-col gap-20 px-3">
-          <Hero />
-          <Projects />
-          <Experience />
-          <About />
-          {/* <Tech /> */}
-          <div className="relative z-0">
-            <Contact />
-          </div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Hero />
+          </Suspense>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Projects />
+            <Experience />
+            <About />
+            <div className="relative z-0">
+              <Contact />
+            </div>
+          </Suspense>
         </div>
         <ScrollBar />
         <StarsCanvas />
