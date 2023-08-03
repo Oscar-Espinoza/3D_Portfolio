@@ -1,9 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useRef, lazy, Suspense } from "react";
 import emailjs from "@emailjs/browser";
 import { styles } from "../../styles";
-import { EarthCanvas } from "../Canvas";
-import { SectionWrapper } from "../../hoc/SectionWrapper";
-import { slideIn } from "../../utils";
 
 const Contact = () => {
   const formRef = useRef();
@@ -59,8 +56,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="xl:mt-12 xl:flex-row flex-col flex overflow-hidden pb-5">
-      <div className="flex-[0.75] bg-black-100 p-8 rounded-2xl flex flex-col gap-3">
+    <section className="overflow-hidden pb-5 sectionWrapper" id="contact">
+      <div></div>
+      <div className="bg-black-100 p-8 rounded-2xl flex flex-col gap-3">
         <div>
           <p className={styles.sectionSubText}>Get in touch</p>
           <h3 className={styles.sectionHeadText}>Contact</h3>
@@ -105,18 +103,14 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="bg-tertiary py-3 px-8 outline-none text-white font-bold shadow-md shadow-primary rounded-xl col-span-2 w-full"
+            className="bg-tertiary py-3 px-8 outline-none text-white font-bold shadow-md shadow-primary rounded-xl col-span-2 w-full xl:w-1/2"
           >
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
       </div>
-
-      <div className="xl:flex-1 xl:h-auto h-[550px]">
-        <EarthCanvas />
-      </div>
-    </div>
+    </section>
   );
 };
 
-export default SectionWrapper(Contact, "contact");
+export default Contact;

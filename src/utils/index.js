@@ -3,11 +3,11 @@ import {
   fadeIn,
   zoomIn,
   slideIn,
-  staggerContainer
+  staggerContainer,
+  handleLinkClick
 } from './motion'
 
-export { textVariant, fadeIn, zoomIn, slideIn, staggerContainer }
+const capitalizeFirstLetter = (string) => (string.charAt(0).toUpperCase() + string.slice(1))
 
-export function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+export { textVariant, fadeIn, zoomIn, slideIn, staggerContainer, capitalizeFirstLetter, handleLinkClick }
+

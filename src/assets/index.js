@@ -5,6 +5,7 @@ import creator from "./creator.webp";
 import mobile from "./mobile.webp";
 import web from "./web.webp";
 import github from "./github.webp";
+import linkedin from "./linkedin.webp"
 import menu from "./menu.svg";
 import close from "./close.svg";
 import astronaut from "./astronaut.webp";
@@ -61,6 +62,7 @@ export {
   mobile,
   web,
   github,
+  linkedin,
   menu,
   close,
   astronaut,

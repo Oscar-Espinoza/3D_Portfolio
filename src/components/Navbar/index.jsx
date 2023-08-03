@@ -1,24 +1,25 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useRef } from "react";
 import { styles } from "../../styles";
-import { navLinks } from "../../constants";
 import { myLogo, menu, close } from "../../assets";
+import { handleLinkClick } from "../../utils/motion";
 import ScrollBar from "../ScrollBar";
+import "./styles.css";
 
-const Navbar = () => {
-  const [active, setActive] = useState("");
+const Navbar = ({ currentSection, setCurrentSection }) => {
   const [toggle, setToggle] = useState(false);
+  const navRef = useRef(null);
+
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary xs:hidden`}
+      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary md:hidden`}
+      ref={navRef}
     >
       <div className="w-full flex justify-between items-center max-w-7x1 mx-auto">
-        <Link
-          to="/"
+        <button
+          type="button"
           className={styles.Link}
           onClick={() => {
             setToggle(!toggle);
-            setActive("");
             window.scrollTo(0, 0);
           }}
         >
@@ -32,8 +33,8 @@ const Navbar = () => {
               | Espinoza
             </span>
           </p>
-        </Link>
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        </button>
+        <div className="md:hidden flex flex-1 justify-end items-center">
           <img
             src={toggle ? close : menu}
             alt="menu"
@@ -43,25 +44,15 @@ const Navbar = () => {
           />
           <div
             className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
+              !toggle ? "hidden" : "block"
+            } absolute right-0 w-full bg-primary scrollBar`}
           >
-            <ul className="list-none flex flex-col gap-4 justify-end items-start">
-              {navLinks.map((Link) => (
-                <li
-                  key={Link.id}
-                  className={`${
-                    active === Link.title ? "text-white" : "text-secondary"
-                  } font-poppins font-medium cursor-pointer text-[16px]`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(Link.title);
-                  }}
-                >
-                  <a href={`#${Link.id}`}>{Link.title}</a>
-                </li>
-              ))}
-            </ul>
+            <ScrollBar
+              currentSection={currentSection}
+              setCurrentSection={setCurrentSection}
+              navRef={navRef}
+              setToggle={setToggle}
+            />
           </div>
         </div>
       </div>

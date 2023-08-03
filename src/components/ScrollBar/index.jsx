@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { capitalizeFirstLetter } from "../../utils";
+import React, { Suspense, useEffect, useState } from "react";
 import { astronaut } from "../../assets";
+import { handleLinkClick } from "../../utils";
+import { navLinks } from "../../constants";
+import { github, linkedin } from "../../assets";
 
 import "./styles.css";
 
-const ScrollBar = () => {
-  const [text, setText] = useState("Welcome");
+const ScrollBar = ({ currentSection, navRef, setToggle }) => {
   const [hue, setHue] = useState(259);
   const color = `hsl(${hue}, 100%, 68%)`;
 
@@ -28,28 +29,6 @@ const ScrollBar = () => {
       }
 
       setHue(newHue);
-
-      const sectionWrappers = document.getElementsByClassName("sectionWrapper");
-
-      for (let i = 0; i < sectionWrappers.length; i++) {
-        if (sectionWrappers[i].classList.contains("visible")) {
-          setText(sectionWrappers[i].id);
-
-          document.querySelectorAll("#menu-index li").forEach((li) => {
-            li.style.color = "rgb(31 41 55)";
-            li.classList.remove("active");
-          });
-
-          const option = document.getElementById(
-            `${sectionWrappers[i].id}-option`
-          );
-          if (option) {
-            option.style.color = color;
-            option.classList.add("active");
-          }
-          break;
-        }
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -60,28 +39,36 @@ const ScrollBar = () => {
   }, [hue]);
 
   return (
-    <div
-      className="hidden md:block relative hero-container md:col-span-4 lg:col-span-3 col-span-12 px-3 text-right"
-      id="scrollBar"
-    >
-      <div className="container flex flex-col justify-evenly sticky top-9 sidebar-container">
-        <div className="z-10 text-right">
-          <h1
-            className="font-black md:text-4xl lg:text-5xl xl:text-6xl"
-            style={{ color: `hsl(${hue}, 100%, 68%)` }}
-          >
-            {capitalizeFirstLetter(text)}
-          </h1>
-        </div>
-        <div className="flex flex-row gap-10 h-52 self-end">
-          <ul
-            className="h-100 flex flex-col justify-between text-right"
-            id="menu-index"
-          >
-            <style>
-              {`
+    <div className="flex flex-col items-center p-5 md:p-0 justify-evenly md:items-end sticky md:top-9 sidebar-container">
+      <div
+        className="flex gap-10 w-max rounded-xl py-2 px-5 h-fit"
+        style={{ background: `hsla(${hue}, 100%, 68%, 0.15)` }}
+      >
+        <a href="https://github.com/Oscar-Espinoza" target="_blank">
+          <img
+            src={github}
+            alt="github"
+            className="w-10 h-10 rounded-full scale"
+          />
+        </a>
+        <a href="https://www.linkedin.com/in/oscar-d-espinoza/" target="_blank">
+          <img
+            src={linkedin}
+            alt="linkedin"
+            className="w-10 h-10 rounded-full scale"
+          />
+        </a>
+      </div>
+
+      <div className="flex justify-end gap-5 h-fit lg:h-64 xl:h-80 md:self-end md:w-full">
+        <ul
+          className="h-100 flex flex-col justify-between text-right"
+          id="menu-index"
+        >
+          <style>
+            {`
                 #menu-index li:hover {
-                  font-size: 20px;
+                  font-size: 25px !important;
                   color: var(--hover-color) !important;
                   cursor: pointer;
                 }
@@ -89,48 +76,44 @@ const ScrollBar = () => {
                   --hover-color: ${color};
                 }
               `}
-            </style>
-            <li id="welcome-option" style={{ color: "hsl(262, 100%, 68%)" }}>
-              Welcome -
+          </style>
+          {navLinks.map((section) => (
+            <li
+              key={section.id}
+              id={`${section.id}-option`}
+              style={{
+                color: `${section.id === currentSection ? color : ""}`,
+              }}
+              onClick={() => {
+                handleLinkClick(section.id, navRef);
+                setToggle && setToggle((prev) => !prev);
+              }}
+            >
+              {section.title} -
             </li>
+          ))}
+        </ul>
 
-            <li id="projects-option" className="text-gray-800">
-              Projects -
-            </li>
-
-            <li id="experience-option" className="text-gray-800">
-              Experience -
-            </li>
-
-            <li className="font-bold text-gray-800" id="Tech Stack-option">
-              Tech stack -
-            </li>
-
-            <li id="contact-option" className="text-gray-800">
-              Contact -
-            </li>
-          </ul>
-
+        <div
+          className="flex flex-col justify-center items-center"
+          id="ball-container"
+        >
           <div
-            className="flex flex-col justify-center items-center"
-            id="ball-container"
-          >
-            <div
-              className="w-5 h-5 rounded-full"
-              id="ball"
-              style={{ backgroundColor: `hsl(${hue}, 100%, 68%)` }}
-            />
-            <div className="w-1 sm:h-80 h-40 violet-gradient" />
-          </div>
-        </div>
-        <div className="">
-          <img
-            src={astronaut}
-            alt="astronaut"
-            className="astronaut float-right xl:w-3/4"
+            className="w-5 h-5 rounded-full"
+            id="ball"
+            style={{ backgroundColor: `hsl(${hue}, 100%, 68%)` }}
           />
+          <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
       </div>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <img
+          src={astronaut}
+          alt="astronaut"
+          className="astronaut w-40 h-fit float-right md:w-40 lg:w-52 md:h-auto"
+        />
+      </Suspense>
     </div>
   );
 };

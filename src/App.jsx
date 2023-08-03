@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState } from "react";
 const Hero = lazy(() => import("./components/Hero"));
 const Projects = lazy(() => import("./components/Projects"));
 const Experience = lazy(() => import("./components/Experience"));
@@ -7,11 +7,15 @@ const About = lazy(() => import("./components/About"));
 const Contact = lazy(() => import("./components/Contact"));
 const ScrollBar = lazy(() => import("./components/ScrollBar"));
 const Navbar = lazy(() => import("./components/Navbar"));
-const StarsCanvas = lazy(() => import("./components/Canvas/Stars"));
+const Stars = lazy(() => import("./components/Particles"));
 
 import { useEffect } from "react";
 
 const App = () => {
+  const [currentSection, setCurrentSection] = useState("welcome");
+
+  const changeSection = (newSection) => setCurrentSection(newSection);
+
   useEffect(() => {
     const handleScroll = () => {
       const sectionWrappers = document.querySelectorAll(".sectionWrapper");
@@ -39,6 +43,7 @@ const App = () => {
       visibleElements.forEach((element) => {
         if (element === maxVisibleElement) {
           element.classList.add("visible");
+          setCurrentSection(element.id);
         } else {
           element.classList.remove("visible");
         }
@@ -46,7 +51,7 @@ const App = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check on mount
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -54,13 +59,21 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Navbar />
+    <div className="relative">
+      <Suspense fallback={<div>Loading...</div>}>
+        <Navbar
+          currentSection={currentSection}
+          setCurrentSection={changeSection}
+        />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Stars />
+      </Suspense>
       <div
-        className="relative z-0 bg-primary grid grid-cols-1 md:grid-cols-12 xs:px-4 gap-8 py-8"
+        className="relative z-10 bg-tertiary bg-opacity-50 grid grid-cols-1 sm:grid-cols-12 px-5 md:px-10 xl:px-20 gap-8 py-8"
         id="content-container"
       >
-        <div className="col-span-12 md:col-span-8 flex flex-col gap-20 px-3">
+        <div className="flex flex-col col-span-12 md:col-span-8 lg:col-span-9 gap-20 px-3">
           <Suspense fallback={<div>Loading...</div>}>
             <Hero />
           </Suspense>
@@ -73,10 +86,17 @@ const App = () => {
             </div>
           </Suspense>
         </div>
-        <ScrollBar />
-        <StarsCanvas />
+        <div
+          className="hidden md:block relative hero-container col-span-4 lg:col-span-3 px-3 text-right text-"
+          id="scrollBar"
+        >
+          <ScrollBar
+            currentSection={currentSection}
+            setCurrentSection={changeSection}
+          />
+        </div>
       </div>
-    </BrowserRouter>
+    </div>
   );
 };
 

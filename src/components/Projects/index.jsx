@@ -69,7 +69,7 @@ const ProjectCard = ({
 
       <div className="absolute z-10 top-0 w-full h-full flex flex-col justify-between project-content">
         <div className=" pr-32 p-3">
-          <h3 className=" text-blue-700 font-bold text-[24px]">{name}</h3>
+          <h3 className=" text-teal-300 font-bold text-[24px]">{name}</h3>
           <p className="mt-2 text-white text-[14px]">{description}</p>
         </div>
 
@@ -93,7 +93,11 @@ const Projects = () => {
     <section className="relative z-0 sectionWrapper" id="projects">
       <div>
         <h2 className={styles.sectionHeadText}>Projects</h2>
-        <p className={`${styles.sectionSubText} w-fit`}>
+        <p
+          className={`${styles.sectionSubText} w-fit ${
+            isDesktop ? "hidden" : ""
+          }`}
+        >
           Tap a project once to display more information or dismiss it, double
           click to follow the project link.
         </p>

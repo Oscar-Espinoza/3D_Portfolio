@@ -73,17 +73,17 @@ const Hero = () => {
 
   return (
     <section
-      className="sectionWrapper hero-section flex flex-col justify-center items-center"
+      className="sectionWrapper hero-section flex flex-col justify-center items-center w-full"
       id="welcome"
     >
-      <div>
+      <div className="sm:w-9/12 md:w-full">
         <p className={`${styles.sectionSubText} w-fit`}>
           Hi! My name is Oscar Espinoza
         </p>
-        <h1 className="font-black text-white xl:text-[60px] lg:text-[45px] sm:text-[40px] xs:text-[30px] text-[30px] mt-2 gap-2">
+        <h1 className="font-black text-white xl:text-[50px] lg:text-[40px] md:text-[40px] sm:text-[35px] xs:text-[30px] text-[30px] mt-2 gap-2 main-title">
           Dedicated software developer experienced in{" "}
           <div
-            className="titles-container cursor-grab w-52 sm:w-96 inline-block"
+            className="titles-container cursor-grab w-52 sm:w-96 inline-block text-wrap"
             ref={titleContainerRef}
             style={{ overscrollBehavior: "contain", touchAction: "none" }}
             {...bind()}

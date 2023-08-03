@@ -2,6 +2,10 @@
   min-height: calc(100vh - 2rem);
 }
 
+.main-title {
+  text-wrap: balance;
+}
+
 .titles-container {
   display: flex;
   flex-direction: column;

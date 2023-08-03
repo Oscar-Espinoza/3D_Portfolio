@@ -86,3 +86,24 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
     },
   };
 };
+
+export const getHeight = (ref) => {
+  if (ref.current) {
+    const navHeight = ref.current.clientHeight;
+    return navHeight;
+  }
+};
+
+export const handleLinkClick = (targetId, navRef) => {
+  const targetElement = document.getElementById(targetId);
+  if (targetElement) {
+    const yOffset = navRef ? getHeight(navRef) * -1 : 0;
+    const y =
+      targetElement.getBoundingClientRect().top + window.scrollY + yOffset;
+
+    window.scroll({
+      top: y,
+      behavior: "smooth",
+    });
+  }
+};
