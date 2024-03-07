@@ -1,4 +1,3 @@
-import { BrowserRouter } from "react-router-dom";
 import React, { Suspense, lazy, useState } from "react";
 const Hero = lazy(() => import("./components/Hero"));
 const Projects = lazy(() => import("./components/Projects"));

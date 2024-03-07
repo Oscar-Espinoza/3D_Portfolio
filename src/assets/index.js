@@ -32,6 +32,8 @@ import onlinetutorials from "./tech/onlinetutorials.svg"
 import pairprogramming from "./tech/pairprogramming.svg"
 import reactnavigation from "./tech/reactnavigation.webp"
 import stackoverflow from "./tech/stackoverflow.svg"
+import laravel from './tech/laravel_logo.png'
+import nestjs from './tech/nestjs_logo.png'
 
 import meta from "./company/meta.webp";
 import shopify from "./company/shopify.webp";
@@ -41,11 +43,13 @@ import ba from "./company/baciudad.webp"
 import rm from "./company/rm.webp"
 import tsg from "./company/tsg.webp"
 import devlabs from "./company/devlabs.webp"
+import yovivoLogo from './company/yovivo_logo.png'
 
 import letMeRent_img from  "./letMeRent.webp"
 import arturo_img from "./arturo_img.webp"
 import portfolio_img from "./portfolio_img.webp"
 import swagger_img from "./websites/swagger.svg"
+import yovivo from './yovivo.webp'
 
 import carrent from "./carrent.webp";
 import jobit from "./jobit.webp";
@@ -88,6 +92,8 @@ export {
   pairprogramming,
   reactnavigation,
   stackoverflow,
+  laravel,
+  nestjs,
   meta,
   shopify,
   starbucks,
@@ -96,9 +102,11 @@ export {
   rm,
   tsg,
   devlabs,
+  yovivoLogo,
   carrent,
   jobit,
   letMeRent,
+  yovivo,
   arturo,
   ApiDoc,
   letMeRent_img,

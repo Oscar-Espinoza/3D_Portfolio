@@ -19,10 +19,13 @@ import {
   rm,
   tsg,
   devlabs,
+  yovivoLogo,
   carrent,
   jobit,
   threejs,
   axios,
+  laravel,
+  nestjs,
   documentation,
   expo,
   lab,
@@ -32,6 +35,7 @@ import {
   reactnavigation,
   stackoverflow,
   letMeRent,
+  yovivo,
   arturo,
   ApiDoc,
   letMeRent_img,
@@ -114,6 +118,14 @@ const services = [
         icon: nodejs,
       },
       {
+        name: 'Nestjs',
+        icon: nestjs,
+      },
+      {
+        name: 'Laravel',
+        icon: laravel,
+      },
+      {
         name: "MongoDB",
         icon: mongodb,
       },
@@ -193,48 +205,6 @@ const services = [
 
 const experiences = [
   {
-    title: "Functional System Analyst",
-    company_name: "Buenos Aires City Government",
-    icon: ba,
-    link: "https://www.linkedin.com/company/gobierno-de-la-ciudad-de-buenos-aires/",
-    iconBg: "#E6DEDD",
-    date: "Jul 2018 - Jan 2020",
-    points: [
-      "Carried out extensive business processes analysis, identifying areas for improvement and leveraging IT to optimize those procedures.",
-      "Partnered with diverse teams to capture and document business requirements, subsequently translating them into actionable technical specifications for system enhancements.",
-      "Facilitated training and support for end-users to ensure smooth adoption and application of new technologies and systems.",
-      "Showcased strong communication abilities, effectively explaining technical concepts to non-technical users, and fostering solid relationships with team members and clients.",
-    ],
-  },
-  {
-    title: "Remote - Order fulfillment specialist",
-    company_name: "Rehabmart.com",
-    icon: rm,
-    link: "https://www.linkedin.com/company/rehabmart-llc/",
-    iconBg: "#E6DEDD",
-    date: "Jan 2020 - May 2021",
-    points: [
-      "Improved operational efficiency by conducting data analysis and reporting to monitor and enhance order fulfillment processes.",
-      "Collaborated with cross-functional teams, demonstrating effective communication and teamwork skills.",
-      "Showcased strong problem-solving skills through the identification and implementation of effective solutions for process improvement.",
-      "Demonstrated proficiency in using order management software and tools, including their own management software.",
-    ],
-  },
-  {
-    title: "Remote Technical Support Specialist",
-    company_name: "TSG Proadvisor",
-    icon: tsg,
-    link: "https://tsgproadvisorlatino.talentlms.com/",
-    iconBg: "#E6DEDD",
-    date: "May 2021 - May 2022",
-    points: [
-      "Provided technical support, gaining extensive experience in problem-solving and client communication.",
-      "Collaborated with cross-functional teams to gather and document technical requirements, gaining experience in requirements gathering and analysis.",
-      "Conducted remote troubleshooting, demonstrating strong technical understanding and ability to work under pressure.",
-      "Maintained detailed technical support records, showing attention to detail and organizational skills.",
-    ],
-  },
-  {
     title: "Full-stack Developer",
     company_name: "DevLabs",
     icon: devlabs,
@@ -248,36 +218,48 @@ const experiences = [
       "Actively engaged in Agile Scrum practices, contributing to sprint planning, daily stand-ups, sprint reviews, and retrospectives, effectively managing project progress.",
     ],
   },
-];
-
-const testimonials = [
   {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Oscar proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Oscar does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Oscar optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    title: "Remote - Full-stack Junior developer",
+    company_name: "TSG Proadvisor",
+    icon: tsg,
+    link: "https://tsgproadvisorlatino.talentlms.com/",
+    iconBg: "#E6DEDD",
+    date: "May 2021 - May 2022",
+    points: [
+      "Expertly harnessed the capabilities of React and Next.js frameworks to build dynamic and responsive applications tailored to client specifications.",
+      "Pioneered the integration of back-end and front-end components, leading to a 30% improvement in site performance and load times.",
+    ],
   },
 ];
 
 const projects = [
+  {
+    name: "Yovivo",
+    description:
+      "Property rent web application focused on general rent and extended stays for digital nomads",
+    tags: [
+      {
+        name: "Next.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Laravel",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Tailwindcss",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "MySQL",
+        color: "green-text-gradient",
+      },
+    ],
+    image: yovivo,
+    source_code_link: "https://github.com/Oscar-Espinoza/Property-rent-management/tree/main/client",
+    website_link: "https://rent-dashboard.netlify.app/",
+    logo: yovivoLogo,
+  },
   {
     name: "LetMeRent",
     description:
@@ -389,5 +371,5 @@ const data = {
   ]
 };
 
-export { services, experiences, testimonials, projects, data };
+export { services, experiences, projects, data };
 
