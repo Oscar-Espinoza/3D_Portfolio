@@ -42,7 +42,7 @@ const ProjectCard = ({
         <img
           src={image}
           alt={name}
-          className="object-cover max-h-full w-full rounded-3xl"
+          className="object-cover h-full w-full rounded-3xl"
         />
       </div>
 
@@ -52,13 +52,15 @@ const ProjectCard = ({
       </div>
 
       <div className="absolute top-2 right-2 flex gap-2 z-20 project-content">
-        <a
-          href={source_code_link}
-          target="blank"
-          className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer scale"
-        >
-          <img src={github} alt="github" className="w-1/2 h-1/2" />
-        </a>
+        {source_code_link && (
+          <a
+            href={source_code_link}
+            target="blank"
+            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer scale"
+          >
+            <img src={github} alt="github" className="w-1/2 h-1/2" />
+          </a>
+        )}
         <div
           onClick={() => window.open(website_link, "blank")}
           className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer z-20 scale"
