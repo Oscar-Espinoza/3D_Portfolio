@@ -5,35 +5,3 @@
 .main-title {
   text-wrap: balance;
 }
-
-.titles-container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  height: 4.5rem;
-
-  @media (max-width: 639px) {
-    height: 33px;
-  }
-  @media (min-width: 840px) and (max-width: 911px) {
-    height: 44px;
-  }
-  @media (min-width: 1440px) {
-    height: 66px;
-  }
-}
-
-
-.title {
-  position: absolute;
-  transform: translateY(100%);
-  opacity: 0;
-  transition: all 0.5s ease;
-}
-
-.title.current {
-  transform: translateY(0);
-  opacity: 1;
-}
-

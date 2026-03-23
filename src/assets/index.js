@@ -18,11 +18,17 @@ import javascript from "./tech/javascript.webp";
 import mongodb from "./tech/mongodb.webp";
 import nodejs from "./tech/nodejs.webp";
 import reactjs from "./tech/reactjs.webp";
-import redux from "./tech/redux.webp";
 import tailwind from "./tech/tailwind.webp";
 import typescript from "./tech/typescript.webp";
-import expo from "./tech/expo.svg";
 import nestjs from './tech/nestjs_logo.png'
+import expressjs from "./tech/expressjs.svg";
+import nextjs from "./tech/nextjs.svg";
+import aws from "./tech/aws.svg";
+import postgresql from "./tech/postgresql.svg";
+import railway from "./tech/railway.svg";
+import github_actions from "./tech/github_actions.svg";
+import posthog from "./tech/posthog.svg";
+import linear from "./tech/linear.svg";
 
 import ba from "./company/baciudad.webp"
 import rm from "./company/rm.webp"
@@ -60,11 +66,17 @@ export {
   mongodb,
   nodejs,
   reactjs,
-  redux,
   tailwind,
   typescript,
-  expo,
   nestjs,
+  expressjs,
+  nextjs,
+  aws,
+  postgresql,
+  railway,
+  github_actions,
+  posthog,
+  linear,
   ba,
   rm,
   tsg,

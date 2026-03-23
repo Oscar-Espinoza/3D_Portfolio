@@ -1,5 +1,6 @@
-import { useState, useRef, lazy, Suspense } from "react";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 import { styles } from "../../styles";
 
 const Contact = () => {
@@ -25,21 +26,22 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_xb8byp3",
-        "template_gzfc2bc",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "Oscar",
           from_email: form.email,
-          to_email: "oscardavid2094@gmail.com",
           message: form.message,
         },
-        "g46gQOVJi3DfOgNnp"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
           setLoading(false);
-          alert("Thank you, I will get back to you, as soon as possible.");
+          toast.success(
+            "Thank you! I will get back to you as soon as possible."
+          );
 
           setForm({
             name: "",
@@ -50,13 +52,23 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.log(error);
-          alert("Something went wrong");
+          toast.error("Something went wrong. Please try again.");
         }
       );
   };
 
   return (
     <section className="overflow-hidden pb-5 sectionWrapper" id="contact">
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: "#151030",
+            color: "#fff",
+            border: "1px solid #804dee",
+          },
+        }}
+      />
       <div></div>
       <div className="bg-black-100 p-8 rounded-2xl flex flex-col gap-3">
         <div>

@@ -46,10 +46,12 @@ const ProjectCard = ({
         />
       </div>
 
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 project-content flex justify-center items-center gap-2">
-        <p>Tap twice</p>
-        <GiClick size={40} />
-      </div>
+      {!isDesktop && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 project-content flex justify-center items-center gap-2">
+          <p>Tap twice</p>
+          <GiClick size={40} />
+        </div>
+      )}
 
       <div className="absolute top-2 right-2 flex gap-2 z-20 project-content">
         {source_code_link && (

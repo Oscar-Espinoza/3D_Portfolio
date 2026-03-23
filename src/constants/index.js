@@ -7,7 +7,6 @@ import {
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
   mongodb,
@@ -19,7 +18,14 @@ import {
   delet,
   yovivoLogo,
   nestjs,
-  expo,
+  expressjs,
+  nextjs,
+  aws,
+  postgresql,
+  railway,
+  github_actions,
+  posthog,
+  linear,
   yovivo,
   delet_admin,
   arturo,
@@ -60,8 +66,8 @@ const services = [
       { name: "CSS 3", icon: css },
       { name: "JavaScript", icon: javascript },
       { name: "TypeScript", icon: typescript },
-      { name: "React JS", icon: reactjs },
-      { name: "Redux Toolkit", icon: redux },
+      { name: "React", icon: reactjs },
+      { name: "Next.js", icon: nextjs },
       { name: "Tailwind CSS", icon: tailwind },
     ],
   },
@@ -69,19 +75,24 @@ const services = [
     title: "Back-end",
     icon: backend,
     technologies: [
-      { name: "Node JS", icon: nodejs },
+      { name: "Node.js", icon: nodejs },
+      { name: "Express.js", icon: expressjs },
       { name: "NestJS", icon: nestjs },
       { name: "MongoDB", icon: mongodb },
-      { name: "Git", icon: git },
-      { name: "Docker", icon: docker },
+      { name: "PostgreSQL", icon: postgresql },
     ],
   },
   {
-    title: "Mobile",
+    title: "DevOps & Tools",
     icon: mobile,
     technologies: [
-      { name: "React Native", icon: reactjs },
-      { name: "Expo", icon: expo },
+      { name: "AWS", icon: aws },
+      { name: "Docker", icon: docker },
+      { name: "Git", icon: git },
+      { name: "Railway", icon: railway },
+      { name: "GitHub Actions", icon: github_actions },
+      { name: "PostHog", icon: posthog },
+      { name: "Linear", icon: linear },
     ],
   },
 ];
@@ -143,7 +154,7 @@ const projects = [
   {
     name: "Delet Admin",
     description:
-      "Enterprise admin dashboard for property management with AWS-backed authentication, third-party API integrations, and real-time data management.",
+      "Enterprise property management dashboard serving real estate operations with AWS authentication, multi-API integrations (August, Textgrid, Zillow), and real-time data pipelines.",
     tags: [
       { name: "React", color: "blue-text-gradient" },
       { name: "Express.js", color: "green-text-gradient" },
@@ -158,7 +169,7 @@ const projects = [
   {
     name: "Yovivo",
     description:
-      "Property rent web application focused on general rent and extended stays for digital nomads.",
+      "Full-stack rental platform connecting digital nomads with extended-stay properties. Features search, filtering, and booking management with a Laravel API backend.",
     tags: [
       { name: "Next.js", color: "blue-text-gradient" },
       { name: "Laravel", color: "green-text-gradient" },
@@ -173,7 +184,7 @@ const projects = [
   {
     name: "Arturo MichAIlena",
     description:
-      "AI image generation app powered by OpenAI's DALL-E API with community showcase.",
+      "AI-powered image generation app using OpenAI's DALL-E API. Users create, share, and browse AI-generated images in a community gallery.",
     tags: [
       { name: "React.js", color: "blue-text-gradient" },
       { name: "OpenAI API", color: "green-text-gradient" },
@@ -186,9 +197,9 @@ const projects = [
     logo: arturo,
   },
   {
-    name: "Yariga REST API Docs",
+    name: "Yariga REST API",
     description:
-      "Visual API documentation for the Yariga property platform built with Swagger.",
+      "RESTful API for a property management platform with Swagger documentation, CRUD operations, and MongoDB data layer.",
     tags: [
       { name: "Node.js", color: "blue-text-gradient" },
       { name: "Swagger", color: "green-text-gradient" },
@@ -197,7 +208,7 @@ const projects = [
     ],
     image: ApiDoc,
     source_code_link: "https://github.com/Oscar-Espinoza/Property-rent-management/tree/main/server",
-    website_link: "https://nice-gold-ant-gear.cyclic.app/docs/",
+    website_link: "https://github.com/Oscar-Espinoza/Property-rent-management/tree/main/server",
     logo: swagger_img,
   },
 ];
@@ -213,7 +224,7 @@ const data = {
   services: [
     { title: "Front-end Developer", icon: web },
     { title: "Back-end Developer", icon: backend },
-    { title: "Mobile Developer", icon: mobile },
+    { title: "DevOps & Tools", icon: mobile },
   ],
 };
 
